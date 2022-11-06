@@ -1,0 +1,19 @@
+.Header {
+  border-bottom: 1px solid rgb(196, 196, 196);
+  margin: 0;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 104px;
+  padding: 0;
+}
+.header__title {
+  max-width: 200px;
+  margin: 30px 0 26px 0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #fff;
+}

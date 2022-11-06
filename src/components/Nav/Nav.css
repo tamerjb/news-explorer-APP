@@ -1,0 +1,27 @@
+.nav__container {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.nav__button-home {
+  border: none;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 0 42px 0 0;
+  color: #fff;
+}
+.nav__button-signin {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: transparent;
+  box-sizing: border-box;
+  border: 1px solid #ffffff;
+  border-radius: 100px;
+  width: 176px;
+  height: 48px;
+  color: #fff;
+}
