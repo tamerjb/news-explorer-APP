@@ -1,15 +1,19 @@
 // import css
 
 import React from 'react';
+import './Header.css';
 import Nav from '../Nav/Nav';
+import SearchForm from '../SearchForm/SearchForm';
 
 const Header = () => {
   return (
     <header className='Header'>
-      <div className='section header__container'>
-        <p className='header__title'>NewsExplorer</p>
+      <div className=' header__container'>
+        <div className='header__logo' />
         <Nav />
       </div>
+
+      <SearchForm />
     </header>
   );
 };

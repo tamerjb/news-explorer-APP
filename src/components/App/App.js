@@ -1,14 +1,11 @@
-import logo from '../../images/logo.svg';
 import Preloader from '../Preloader/Preloader';
-import Header from '../Header/Header';
 import './App.css';
+import Main from '../Main/Main';
 
 function App() {
   return (
     <div className='App'>
-      <body className='body'>
-        <Header />
-      </body>
+      <Main />
     </div>
   );
 }

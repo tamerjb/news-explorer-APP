@@ -1,19 +1,27 @@
 .Header {
-  border-bottom: 1px solid rgb(196, 196, 196);
-  margin: 0;
+  margin: 0 auto;
+  background-image: url(../../images/headerphoto.svg);
+  box-sizing: border-box;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .header__container {
   display: flex;
   justify-content: space-between;
-  margin: 0 104px;
-  padding: 0;
+  align-items: center;
+  border-bottom: 1px solid rgba(196, 196, 196, 0.01);
+  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
 }
-.header__title {
-  max-width: 200px;
-  margin: 30px 0 26px 0;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-  color: #fff;
+.header__logo {
+  all: unset;
+  background: url(../../images/NewsExplorer.svg);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 200px;
+  height: 24px;
+  margin-left: 104px;
 }
