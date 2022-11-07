@@ -1,2 +1,2 @@
-@import url(./blocks/body.css);
-@import url(./blocks/section.css);
+@import url('./vendor/normalize.css');
+@import url('./vendor/fonts.css');

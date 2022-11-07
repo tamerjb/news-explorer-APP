@@ -14,6 +14,7 @@
 }
 .search-form__title {
   font-style: normal;
+  font-family: 'Roboto Slab';
   font-weight: 400;
   font-size: 60px;
   line-height: 64px;
@@ -21,12 +22,14 @@
   margin: 0;
 }
 .search-form__subtitle {
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
   color: #ffffff;
   margin: 0;
+  width: 100%;
 }
 
 .search-form__text {
