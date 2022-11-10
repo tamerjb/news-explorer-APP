@@ -10,8 +10,20 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
-  padding: 0 42px 0 0;
+  padding: 0 76px 0 0;
   color: #fff;
+}
+.nav__button-savedArticles {
+  border: none;
+  background-color: transparent;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 0 64px 0 0;
+
+  color: #b6bcbf;
 }
 .nav__button-signin {
   font-weight: 500;
@@ -25,4 +37,15 @@
   height: 48px;
   color: #fff;
   margin: 19px 104px 13px 0;
+}
+.nav__butoon-signout {
+  all: unset;
+  cursor: pointer;
+  background: url(../../images/logout.svg);
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  transition: 0.2s;
+  background-size: cover;
+  right: 16px;
 }
