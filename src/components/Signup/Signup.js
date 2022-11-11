@@ -1,8 +1,10 @@
 import React from 'react';
-import './Signin.css';
 import PopupWithForm from '../PopupWithForm/PopupWithForm';
+import { usePopup } from '../../contexts/PopupsContext';
 
-const Signin = ({ isOpen, onClose }) => {
+const Signup = () => {
+  const popupContext = usePopup();
+
   const [formData, setFormData] = React.useState({});
 
   const handleChange = (evt) => {
@@ -17,12 +19,12 @@ const Signin = ({ isOpen, onClose }) => {
 
   return (
     <PopupWithForm
-      name='signin'
-      title='Sign in'
-      buttonText='Sign in'
-      redirectText='Sign up'
+      name='signup'
+      title='Sign up'
+      buttonText='Sign up'
+      redirectText='Sign in'
       onSubmit={handleSubmit}
-      isOpen={isOpen}>
+      isOpen={popupContext.popupsState.signup}>
       <fieldset className='popup__fieldset'>
         <div className='popup__input-container'>
           <label className='popup__label'>Email</label>
@@ -48,9 +50,21 @@ const Signin = ({ isOpen, onClose }) => {
           />
           <span className='popup__input-error'></span>
         </div>
+        <div className='popup__input-container'>
+          <label className='popup__label'>Username</label>
+          <input
+            className='popup__input popup__input_type_username'
+            type='username'
+            name='username'
+            placeholder='Enter username'
+            onChange={handleChange}
+            value={formData.username || ''}
+          />
+          <span className='popup__input-error'></span>
+        </div>
       </fieldset>
     </PopupWithForm>
   );
 };
 
-export default Signin;
+export default Signup;

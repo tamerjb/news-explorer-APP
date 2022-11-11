@@ -1,0 +1,28 @@
+.homeheader__title-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  max-width: 608px;
+  margin: 80px auto 88px;
+  gap: 32px;
+}
+.homeheader__title {
+  font-style: normal;
+  font-family: 'Roboto Slab';
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 64px;
+  color: #fff;
+  margin: 0;
+}
+.homeheader__subtitle {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  margin: 0;
+  width: 100%;
+}
