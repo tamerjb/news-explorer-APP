@@ -4,6 +4,8 @@ import Popup from '../Popup/Popup';
 export const Main = () => {
   return (
     <div>
+      {/* <NewsCardsList /> */}
+
       <About />
     </div>
   );

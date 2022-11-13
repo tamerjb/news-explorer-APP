@@ -1,8 +1,11 @@
 import React from 'react';
 import './Signin.css';
 import PopupWithForm from '../PopupWithForm/PopupWithForm';
+import { usePopup } from '../../contexts/PopupsContext';
 
-const Signin = ({ isOpen, onClose }) => {
+const Signin = () => {
+  const popupContext = usePopup();
+
   const [formData, setFormData] = React.useState({});
 
   const handleChange = (evt) => {
@@ -22,7 +25,7 @@ const Signin = ({ isOpen, onClose }) => {
       buttonText='Sign in'
       redirectText='Sign up'
       onSubmit={handleSubmit}
-      isOpen={isOpen}>
+      isOpen={popupContext.popupsState.signin}>
       <fieldset className='popup__fieldset'>
         <div className='popup__input-container'>
           <label className='popup__label'>Email</label>

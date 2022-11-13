@@ -37,6 +37,7 @@
   height: 48px;
   color: #fff;
   margin: 19px 104px 13px 0;
+  cursor: pointer;
 }
 .nav__butoon-signout {
   all: unset;

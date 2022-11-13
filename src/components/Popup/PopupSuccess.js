@@ -6,11 +6,11 @@ const PopupSuccess = () => {
   const popupContext = usePopup();
   const handleRedirect = () => {
     popupContext.closeAllPopups();
-    popupContext.openPopup('signin');
+    popupContext.openPopup('success');
   };
 
   return (
-    <Popup name='success' isOpen={popupContext.popupsState.PopupSuccess}>
+    <Popup name='success' isOpen={popupContext.popupsState.success}>
       <h2 className='popup__title'>Registration successfully completed!</h2>
       <button
         className='popup__redirect-button'

@@ -7,7 +7,7 @@ const PopupProvider = ({ children }) => {
     signin: false,
     signup: false,
     success: false,
-    // mobile: false,
+    mobile: false,
   });
 
   const openPopup = (popupName) => {

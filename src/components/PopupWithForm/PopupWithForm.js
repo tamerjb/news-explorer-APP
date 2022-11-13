@@ -4,13 +4,13 @@ import Popup from '../Popup/Popup';
 import { usePopup } from '../../contexts/PopupsContext';
 
 const PopupWithForm = (props) => {
-  // const popupContext = usePopup();
+  const popupContext = usePopup();
 
-  // const handleRedirect = () => {
-  //   let popupToOpen = props.name === 'signin' ? 'signup' : 'signin';
-  //   popupContext.closeAllPopups();
-  //   popupContext.openPopup(popupToOpen);
-  // };
+  const handleRedirect = () => {
+    let popupToOpen = props.name === 'signin' ? 'signup' : 'signin';
+    popupContext.closeAllPopups();
+    popupContext.openPopup(popupToOpen);
+  };
 
   return (
     <Popup isOpen={props.isOpen} name={props.name}>
@@ -34,8 +34,7 @@ const PopupWithForm = (props) => {
         <button
           className='popup__redirect-button'
           type='button'
-          // onClick={handleRedirect}
-        >
+          onClick={handleRedirect}>
           {props.redirectText}
         </button>
       </div>

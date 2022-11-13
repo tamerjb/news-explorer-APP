@@ -1,32 +1,33 @@
 import React, { useEffect } from 'react';
 import './Popup.css';
+import { usePopup } from '../../contexts/PopupsContext';
 
-const Popup = ({ isOpen, onClose, name, children }) => {
+const Popup = ({ isOpen, name, children }) => {
+  const popupsContext = usePopup();
+
   useEffect(() => {
     if (!isOpen) return;
 
     function handleEscClose(evt) {
       if (evt.key === 'Escape') {
-        onClose();
+        popupsContext.closeAllPopups();
       }
     }
 
-    function handleOverlayClickClose() {
-      if (!isOpen) {
-        onClose();
+    function handleOverlayClickClose(evt) {
+      if (evt.target.classList.contains('popup_opened')) {
+        popupsContext.closeAllPopups();
       }
     }
 
     document.addEventListener('keydown', handleEscClose);
-
     document.addEventListener('click', handleOverlayClickClose);
 
     return () => {
       document.removeEventListener('keydown', handleEscClose);
-
       document.removeEventListener('click', handleOverlayClickClose);
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, popupsContext.closeAllPopups]);
 
   return (
     <div className={`popup ${isOpen ? 'popup_opened' : ''} popup_type_${name}`}>
@@ -35,7 +36,7 @@ const Popup = ({ isOpen, onClose, name, children }) => {
         <button
           className={`popup__close-button ${`popup__close-button_type_${name}`}`}
           type='button'
-          onClick={onClose}
+          onClick={popupsContext.closeAllPopups}
         />
       </div>
     </div>
