@@ -1,16 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+
 import './index.css';
 import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import PopupContextProvider from './contexts/PopupsContext';
+import ArticlesContextProvider from './contexts/ArticlesContext';
+import IsHomeContextProvider from './contexts/IsHomeContext';
+import AuthContextProvider from './contexts/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <PopupContextProvider>
-      <App />
-    </PopupContextProvider>
+    <BrowserRouter>
+      <AuthContextProvider>
+        <IsHomeContextProvider>
+          <PopupContextProvider>
+            <ArticlesContextProvider>
+              <App />
+            </ArticlesContextProvider>
+          </PopupContextProvider>
+        </IsHomeContextProvider>
+      </AuthContextProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

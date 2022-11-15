@@ -9,7 +9,7 @@ export default function Footer() {
       <p className='footer__copy'>© 2021 Supersite, Powered by News API</p>
       <div className='footer__links'>
         <div className='footer__text-links'>
-          <a href='#home' className='footer__link footer__link_text'>
+          <a href='/' className='footer__link footer__link_text'>
             Home
           </a>
           <a
@@ -33,7 +33,7 @@ export default function Footer() {
             href='https://www.linkedin.com/in/tamerjb/'
             target={'_blank'}
             rel='noreferrer'>
-            <img className='footer__image' src={linkedin} alt='' />
+            <img className='footer__image' src={linkedin} alt='linkedin' />
           </a>
         </div>
       </div>

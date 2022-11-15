@@ -9,6 +9,7 @@
   padding-inline-start: 0;
   padding-bottom: 64px;
   grid-auto-rows: 1fr;
+  background-color: rgba(245, 246, 247, 1);
 }
 
 .news-card-list__list-item {

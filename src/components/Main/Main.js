@@ -1,13 +1,18 @@
 import React from 'react';
 import About from '../About/About';
-import Popup from '../Popup/Popup';
+import SearchResults from '../SearchResults/SearchResults';
+import Preloader from '../Preloader/Preloader';
+import NotFound from '../NotFound/NotFound';
+
 export const Main = () => {
   return (
-    <div>
-      {/* <NewsCardsList /> */}
+    <main className='main'>
+      {/* <Preloader />
+      <NotFound /> */}
+      <SearchResults />
 
       <About />
-    </div>
+    </main>
   );
 };
 

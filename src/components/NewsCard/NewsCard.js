@@ -11,11 +11,11 @@ const NewsCard = ({ card }) => {
   const { loggedIn } = useAuth();
   const { openPopup } = usePopup();
 
-  const handleMouseEnter = () => {
-    !loggedIn && setShowToolTip(true);
-  };
   const handleMouseLeave = () => {
     setShowToolTip(false);
+  };
+  const handleMouseEnter = () => {
+    !loggedIn && setShowToolTip(true);
   };
 
   const handleButtonClick = () => {

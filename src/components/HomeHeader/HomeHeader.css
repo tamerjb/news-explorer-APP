@@ -4,7 +4,7 @@
   flex-direction: column;
   align-content: center;
   max-width: 608px;
-  margin: 80px auto 88px;
+  margin: 80px auto 0;
   gap: 32px;
 }
 .homeheader__title {

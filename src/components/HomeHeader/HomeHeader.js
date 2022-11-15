@@ -1,5 +1,7 @@
 import React from 'react';
 import './HomeHeader.css';
+import SearchForm from '../SearchForm/SearchForm';
+
 const HomeHeader = () => {
   return (
     <div className='homeheader__title-container'>
@@ -8,6 +10,7 @@ const HomeHeader = () => {
         Find the latest news on any topic and save them in your personal
         account.
       </p>
+      <SearchForm />
     </div>
   );
 };
