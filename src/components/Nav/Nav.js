@@ -27,13 +27,13 @@ const Nav = () => {
   return (
     <nav className={`${isHome ? 'nav' : 'nav nav_bg-light'}`}>
       <div className='section nav__container'>
-        <div className='nav__logo-container'>
+        <NavLink to='/' className='nav__logo-container'>
           <img
             src={isHome ? whiteLogo : blackLogo}
             alt='logo'
             className='nav__logo'
           />
-        </div>
+        </NavLink>
         <div className='nav__menu'>
           <ul className='nav__menu-list'>
             <li className='nav__menu-item'>
