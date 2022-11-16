@@ -26,3 +26,42 @@
   margin: 0;
   width: 100%;
 }
+@media screen and (max-width: 768px) {
+  .homeheader__title-container {
+    margin: 38px auto 0;
+    max-width: 452px;
+  }
+  .homeheader__title {
+    font-size: 36px;
+    line-height: 40px;
+    max-width: 385px;
+  }
+  .homeheader__subtitle {
+    max-width: 452px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .homeheader__title-container {
+    padding: 32px 16px 30px;
+    margin: 0;
+    max-width: 385;
+  }
+  .homeheader__title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+  .homeheader__subtitle {
+    max-width: 70%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .homeheader__title-container {
+    gap: 0;
+  }
+  .homeheader__subtitle {
+    max-width: 100%;
+    padding: 16px 0 122px 0;
+  }
+}

@@ -5,17 +5,24 @@ import './Nav.css';
 import { NavLink } from 'react-router-dom';
 import whiteLogo from '../../images/NewsExplorer_logo_white.svg';
 import blackLogo from '../../images/NewsExplorer_logo_black.svg';
+import blackBurgerIcon from '../../images/menu_icon_black.svg';
+import whiteBurgerIcon from '../../images/menu_icon_white.svg';
 
 import { usePopup } from '../../contexts/PopupsContext';
 import { useAuth } from '../../contexts/AuthContext';
+import { useIsHome } from '../../contexts/IsHomeContext';
 
-const Nav = ({ isHome }) => {
+const Nav = () => {
   const { openPopup } = usePopup();
   const { loggedIn, user, handleLogout } = useAuth();
+  const { isHome } = useIsHome();
 
   const handleNavButtonClick = () => {
     !loggedIn ? openPopup('signin') : handleLogout();
     // openPopup('signin');
+  };
+  const handleMobileNavClick = () => {
+    openPopup('mobile');
   };
   return (
     <nav className={`${isHome ? 'nav' : 'nav nav_bg-light'}`}>
@@ -31,16 +38,9 @@ const Nav = ({ isHome }) => {
           <ul className='nav__menu-list'>
             <li className='nav__menu-item'>
               <NavLink
-                exact={true}
+                end
                 to='/'
-                className={
-                  isHome ? 'nav__link' : 'nav__link nav__link_bg-light'
-                }
-                activeClassName={` ${
-                  isHome
-                    ? 'nav__link_active'
-                    : 'nav__link_active nav__link_active_bg-light'
-                }`}>
+                className={isHome ? 'nav__link' : 'nav__link nav__link_black'}>
                 Home
               </NavLink>
             </li>
@@ -49,13 +49,9 @@ const Nav = ({ isHome }) => {
                 <NavLink
                   to='/saved-news'
                   className={
-                    isHome ? 'nav__link' : 'nav__link nav__link_bg-light'
-                  }
-                  activeClassName={` ${
-                    isHome
-                      ? 'nav__link_active'
-                      : 'nav__link_active nav__link_active_bg-light'
-                  }`}>
+                    isHome ? 'nav__link' : 'nav__link nav__link_black'
+                  }>
+                  {' '}
                   Saved articles
                 </NavLink>
               </li>
@@ -63,7 +59,7 @@ const Nav = ({ isHome }) => {
           </ul>
           <button
             className={`${
-              isHome ? 'nav__button' : 'nav__button nav__button_bg-light '
+              isHome ? 'nav__button' : 'nav__button nav__button-black '
             }`}
             onClick={handleNavButtonClick}>
             <span className='nav__button-text'>
@@ -77,14 +73,14 @@ const Nav = ({ isHome }) => {
             )}
           </button>
         </div>
-        {/* <button
-          onClick={handleHamburgerClick}
-          className='nav__hamburger'
+        <button
+          onClick={handleMobileNavClick}
+          className='nav__mobile'
           style={{
             backgroundImage: `url(${
               isHome ? whiteBurgerIcon : blackBurgerIcon
             })`,
-          }}></button> */}
+          }}></button>
       </div>
     </nav>
   );

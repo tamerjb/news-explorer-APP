@@ -61,37 +61,30 @@
   padding-top: 24px;
   transition: all 0.3s ease;
 }
-
-.nav__link:hover {
-  color: #dadada;
-}
-
-.nav__link_active {
+.nav__link.active {
   box-shadow: 0 -2px 0 0 rgb(255, 255, 255) inset;
   -webkit-box-shadow: 0 -2px 0 0 rgb(255, 255, 255) inset;
   -moz-box-shadow: 0 -2px 0 0 rgb(255, 255, 255) inset;
 }
-
-.nav__link_active_bg-light {
+.nav__link_black {
+  color: #000;
+}
+.nav__link_black.active {
   box-shadow: 0 -2px 0 0 rgb(0, 0, 0) inset;
   -webkit-box-shadow: 0 -2px 0 0 rgb(0, 0, 0) inset;
   -moz-box-shadow: 0 -2px 0 0 rgb(0, 0, 0) inset;
 }
 
-.nav__link_bg-light {
-  color: rgba(26, 27, 34, 1);
-}
-
-.nav__link_bg-light:hover {
-  color: rgb(130, 130, 130);
+.nav__link:hover {
+  color: #dadada;
 }
 
 .nav__button {
   border-radius: 100px;
   background: transparent;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 17px;
   cursor: pointer;
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
@@ -110,7 +103,7 @@
   opacity: 0.7;
 }
 
-.nav__button_bg-light {
+.nav__button-black {
   color: rgba(26, 27, 34, 1);
   border: 1px solid rgba(26, 27, 34, 1);
 }
@@ -127,7 +120,7 @@
   background-image: url(../../images/logout_icon_black.svg);
 }
 
-.nav__hamburger {
+.nav__mobile {
   display: none;
   width: 24px;
   height: 24px;
@@ -137,27 +130,26 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 1300px) {
-  .nav__container {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-}
-
 @media screen and (max-width: 1024px) {
   .nav__menu-list {
     gap: 50px;
   }
-}
-
-@media screen and (max-width: 768px) {
   .nav__container {
     padding-left: 40px;
     padding-right: 40px;
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    gap: 16px;
+  }
+  .nav__menu-list {
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 668px) {
   .nav {
     padding-top: 0;
     padding-bottom: 0;
@@ -170,7 +162,7 @@
     padding-bottom: 19.5px;
     max-width: 115px;
   }
-  .nav__hamburger {
+  .nav__mobile {
     display: block;
   }
 }

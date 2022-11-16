@@ -1,5 +1,5 @@
 import { useState, createContext, useContext } from 'react';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext();
 
@@ -10,11 +10,16 @@ const AuthProvider = ({ children }) => {
     firstName: 'Tamir',
     lastName: 'Jb',
   });
+  const navigateTo = useNavigate();
 
   const handleLogout = () => {
     setLoggedIn(false);
-    setUser({});
-    Navigate('/');
+    setUser({
+      email: '',
+      firstName: '',
+      lastName: '',
+    });
+    navigateTo('/');
   };
 
   return (

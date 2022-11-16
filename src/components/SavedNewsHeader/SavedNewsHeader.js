@@ -5,7 +5,7 @@ import { useAuth } from '../../contexts/AuthContext';
 
 const SavedNewsHeader = () => {
   const { data } = useArticles();
-  const Auth = useAuth();
+  const { user } = useAuth();
 
   const keywords = data.map((card) => card.keyword);
   const uniqueKeywords = [...new Set(keywords)];
@@ -14,7 +14,7 @@ const SavedNewsHeader = () => {
     <div className='news-header'>
       <h1 className='news-header__title'>Saved articles</h1>
       <p className='news-header__subtitle'>
-        {Auth.user.firstName} ,You have {data.length} saved articles
+        {user.firstName} ,You have {data.length} saved articles
       </p>
       <p className='news-header__keywords'>
         By keywords:{' '}
