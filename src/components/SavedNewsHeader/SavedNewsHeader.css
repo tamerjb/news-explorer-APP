@@ -7,18 +7,18 @@
   padding-right: 40px;
 }
 .news-header__title {
-  color: #1a1b22;
+  color: rgba(26, 27, 34, 0.5);
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
   margin-block-end: 0;
   margin-block-start: 0;
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .news-header__subtitle {
   font-weight: 400;
-  font-family: 'Roboto-slab', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto Slab', Helvetica, sans-serif;
   font-size: 40px;
   line-height: 46px;
   margin-block-start: 0;

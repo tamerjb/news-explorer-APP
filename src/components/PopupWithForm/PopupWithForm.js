@@ -2,6 +2,7 @@ import React from 'react';
 import './PopupWithForm.css';
 import Popup from '../Popup/Popup';
 import { usePopup } from '../../contexts/PopupsContext';
+import { useFormWithValidation } from '../../utils/FormValidation';
 
 const PopupWithForm = (props) => {
   const popupContext = usePopup();
@@ -18,8 +19,7 @@ const PopupWithForm = (props) => {
       <form
         className={`popup__form popup__form_type_${props.name}`}
         name={props.name}
-        onSubmit={props.onSubmit}
-        noValidate>
+        onSubmit={props.onSubmit}>
         {props.children}
         <fieldset className='popup__fieldset'>
           <button

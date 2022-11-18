@@ -13,10 +13,11 @@
 }
 
 .search-results__title {
-  font-family: 'Roboto-slab', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto Slab', Helvetica, sans-serif;
   font-weight: 400;
-  font-size: 40px;
-  line-height: 46px;
+  font-size: 26px;
+  line-height: 30px;
+  font-style: normal;
   align-self: flex-start;
   margin-block-start: 0;
   margin-block-end: 0;

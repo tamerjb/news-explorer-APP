@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
 import './NewsCard.css';
 import { useIsHome } from '../../contexts/IsHomeContext';
 import { useAuth } from '../../contexts/AuthContext';
 import { usePopup } from '../../contexts/PopupsContext';
 
 const NewsCard = ({ card }) => {
-  const [showToolTip, setShowToolTip] = React.useState(false);
+  const [showToolTip, setShowToolTip] = useState(false);
+  const [isSaved, setIsSaved] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
+  const handleClick = (event) => {
+    // 👇️ toggle isActive state on click
+    setIsActive(!isActive);
+    setIsSaved(!isSaved);
+  };
   const { isHome } = useIsHome();
   const { loggedIn } = useAuth();
   const { openPopup } = usePopup();
@@ -15,14 +24,16 @@ const NewsCard = ({ card }) => {
     setShowToolTip(false);
   };
   const handleMouseEnter = () => {
-    !loggedIn && setShowToolTip(true);
+    setShowToolTip(true);
   };
 
   const handleButtonClick = () => {
     isHome && !loggedIn && openPopup('signin');
-    isHome && loggedIn && console.log('save card');
+    isHome && loggedIn && handleClick();
     !isHome && console.log('delete card');
   };
+
+  // 👇️ check if element contains class on mount
 
   return (
     <article className='news-card'>
@@ -39,19 +50,32 @@ const NewsCard = ({ card }) => {
       </div>
       {showToolTip && (
         <button className='news-card__tootltip'>
-          Sign in to save articles
+          {loggedIn && !isHome
+            ? 'Remove from saved'
+            : 'Sign in to save articles'}
         </button>
       )}
-      <button
-        className={`news-card__button ${
-          isHome
-            ? 'news-card__button_type_save'
-            : 'news-card__button_type_trash'
-        }`}
-        aria-label={isHome ? 'save article' : 'delete article'}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        onClick={handleButtonClick}></button>
+      {isHome && (
+        <button
+          className={`news-card__button ${
+            !isActive
+              ? 'news-card__button_type_save'
+              : 'news-card__button_type_save_active'
+          }`}
+          aria-label='save article'
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onClick={handleButtonClick}></button>
+      )}
+      {!isHome && (
+        <button
+          className='news-card__button news-card__button_type_trash'
+          aria-label='delete article'
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onClick={handleButtonClick}></button>
+      )}
+
       {!isHome && <p className='news-card__keyword'>{card.keyword}</p>}
     </article>
   );

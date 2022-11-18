@@ -50,7 +50,6 @@
 }
 
 .popup__input:focus {
-  outline: none;
 }
 
 .popup__input-error {

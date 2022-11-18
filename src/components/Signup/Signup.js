@@ -37,6 +37,7 @@ const Signup = () => {
             placeholder='Enter email'
             onChange={handleChange}
             value={values.email || ''}
+            required
           />
           <span className='popup__input-error'>
             {' '}
@@ -49,11 +50,15 @@ const Signup = () => {
             className='popup__input popup__input_type_password'
             type='password'
             name='password'
+            required
             placeholder='Enter password'
             onChange={handleChange}
             value={values.password || ''}
           />
-          <span className='popup__input-error'> </span>
+          <span className='popup__input-error'>
+            {' '}
+            {errors.password && 'Please enter a valid password'}
+          </span>
         </div>
         <div className='popup__input-container'>
           <label className='popup__label'>Username</label>
@@ -61,6 +66,7 @@ const Signup = () => {
             className='popup__input popup__input_type_username'
             type='username'
             name='username'
+            required
             placeholder='Enter username'
             onChange={handleChange}
             value={values.username || ''}

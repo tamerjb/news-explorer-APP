@@ -2,16 +2,18 @@ import React from 'react';
 import './Signin.css';
 import PopupWithForm from '../PopupWithForm/PopupWithForm';
 import { usePopup } from '../../contexts/PopupsContext';
+import { useFormWithValidation } from '../../utils/FormValidation';
 
 const Signin = () => {
   const popupContext = usePopup();
 
   const [formData, setFormData] = React.useState({});
+  const { values, handleChange, errors, isValid } = useFormWithValidation();
 
-  const handleChange = (evt) => {
-    const { name, value } = evt.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  // const handleChange = (evt) => {
+  //   const { name, value } = evt.target;
+  //   setFormData({ ...formData, [name]: value });
+  // };
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -35,9 +37,13 @@ const Signin = () => {
             name='email'
             placeholder='Enter email'
             onChange={handleChange}
-            value={formData.email || ''}
+            required={true}
+            value={values.email || ''}
           />
-          <span className='popup__input-error'></span>
+          <span className='popup__input-error'>
+            {' '}
+            {errors.email && 'Please enter a valid email'}
+          </span>
         </div>
         <div className='popup__input-container'>
           <label className='popup__label'>Password</label>
@@ -47,9 +53,13 @@ const Signin = () => {
             name='password'
             placeholder='Enter password'
             onChange={handleChange}
-            value={formData.password || ''}
+            value={values.password || ''}
+            required
           />
-          <span className='popup__input-error'></span>
+          <span className='popup__input-error'>
+            {' '}
+            {errors.password && 'Please enter a valid password'}
+          </span>
         </div>
       </fieldset>
     </PopupWithForm>

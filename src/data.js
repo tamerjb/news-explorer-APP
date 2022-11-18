@@ -3,7 +3,7 @@ export const data = [
     _id: '63558bd777490e884f1c49cd',
     keyword: 'Card 1',
     title: 'Officia id anim commodo consectetur nulla id voluptate amet qui.',
-    text: 'Looks like Im stuck writing by hand oh well I guess at least I get some keyboard typing practice which is always good to imprve my typing speed and accuracy. The more practice, the better',
+    text: 'testing text lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
     date: 'November 4, 2020',
     source: ' source',
     link: 'https://upload.wikimedia.org/wikipedia/commons/1/10/Tursiops_truncatus_01.jpg',

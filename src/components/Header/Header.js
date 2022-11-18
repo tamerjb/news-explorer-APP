@@ -3,7 +3,7 @@
 import React from 'react';
 import './Header.css';
 import Nav from '../Nav/Nav';
-import HomeHeader from '../HomeHeader/HomeHeader';
+import HeaderContent from '../HeaderContent/HeaderContent';
 import SavedNewsHeader from '../SavedNewsHeader/SavedNewsHeader';
 import { useIsHome } from '../../contexts/IsHomeContext';
 const Header = () => {
@@ -13,8 +13,8 @@ const Header = () => {
       <div className='header__container'>
         <Nav isHome={isHome} />
 
-        {isHome ? <HomeHeader /> : <SavedNewsHeader />}
-        {/* <HomeHeader /> */}
+        {isHome ? <HeaderContent /> : <SavedNewsHeader />}
+        {/* <HeaderContent /> */}
       </div>
     </header>
   );
