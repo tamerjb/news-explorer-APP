@@ -1,23 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PopupWithForm from '../PopupWithForm/PopupWithForm';
 import { usePopup } from '../../contexts/PopupsContext';
 import { useFormWithValidation } from '../../utils/FormValidation';
+import userApi from '../../utils/MainApi';
 
 const Signup = () => {
   const popupContext = usePopup();
 
-  const [formData, setFormData] = React.useState({});
+  const [dataExist, setDataExist] = useState({
+    exist: false,
+    message: '',
+  });
 
   // const handleChange = (evt) => {
   //   const { name, value } = evt.target;
   //   setFormData({ ...formData, [name]: value });
   // };
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    console.log(formData);
-  };
+  // const handleSubmit = (evt) => {
+  //   evt.preventDefault();
+  //   console.log(values);
+  // };
   const { values, handleChange, errors, isValid } = useFormWithValidation();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const res = await userApi.signup(values);
+    console.log(values);
+
+    if (!res.message) {
+      popupContext.openPopup('success');
+      return;
+    }
+    setDataExist({ exist: true, message: res.message });
+    setTimeout(() => {
+      setDataExist({ exist: false, message: '' });
+    }, 2000);
+  }
 
   return (
     <PopupWithForm
@@ -25,6 +44,7 @@ const Signup = () => {
       title='Sign up'
       buttonText='Sign up'
       redirectText='Sign in'
+      buttonDisabled={isValid ? false : true}
       onSubmit={handleSubmit}
       isOpen={popupContext.popupsState.signup}>
       <fieldset className='popup__fieldset'>
@@ -52,7 +72,7 @@ const Signup = () => {
             name='password'
             required
             placeholder='Enter password'
-            onChange={handleChange}
+            onInput={handleChange}
             value={values.password || ''}
           />
           <span className='popup__input-error'>
@@ -64,14 +84,17 @@ const Signup = () => {
           <label className='popup__label'>Username</label>
           <input
             className='popup__input popup__input_type_username'
-            type='username'
-            name='username'
+            type='name'
+            name='name'
             required
             placeholder='Enter username'
-            onChange={handleChange}
-            value={values.username || ''}
+            onInput={handleChange}
+            value={values.name || ''}
           />
-          <span className='popup__input-error'> {errors.username}</span>
+          <span className='popup__input-error'>
+            {' '}
+            {dataExist.exist && dataExist.message}
+          </span>
         </div>
       </fieldset>
     </PopupWithForm>

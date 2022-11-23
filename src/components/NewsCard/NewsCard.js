@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import './NewsCard.css';
 import { useIsHome } from '../../contexts/IsHomeContext';
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '../../contexts/CurrentUserContext';
 import { usePopup } from '../../contexts/PopupsContext';
 
 const NewsCard = ({ card }) => {

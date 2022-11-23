@@ -6,7 +6,7 @@ const PopupSuccess = () => {
   const popupContext = usePopup();
   const handleRedirect = () => {
     popupContext.closeAllPopups();
-    popupContext.openPopup('success');
+    popupContext.openPopup('signin');
   };
 
   return (

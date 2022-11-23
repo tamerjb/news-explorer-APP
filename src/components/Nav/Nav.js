@@ -9,12 +9,12 @@ import blackBurgerIcon from '../../images/menu_icon_black.svg';
 import whiteBurgerIcon from '../../images/menu_icon_white.svg';
 
 import { usePopup } from '../../contexts/PopupsContext';
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '../../contexts/CurrentUserContext';
 import { useIsHome } from '../../contexts/IsHomeContext';
 
 const Nav = () => {
   const { openPopup } = usePopup();
-  const { loggedIn, user, handleLogout } = useAuth();
+  const { loggedIn, User, handleLogout } = useAuth();
   const { isHome } = useIsHome();
 
   const handleNavButtonClick = () => {
@@ -63,7 +63,7 @@ const Nav = () => {
             }`}
             onClick={handleNavButtonClick}>
             <span className='nav__button-text'>
-              {loggedIn ? user.firstName : 'Sign in'}
+              {loggedIn ? User.name : 'Sign in'}
             </span>
             {loggedIn && (
               <span

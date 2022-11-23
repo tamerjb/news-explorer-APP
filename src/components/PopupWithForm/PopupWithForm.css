@@ -85,6 +85,11 @@
   cursor: pointer;
   transition: background ease-out 0.3s;
 }
+.popup__form-submit_disabled,
+.popup__form-submit_disabled:hover,
+.popup__form-submit_disabled:active {
+  background: #e6e8eb;
+}
 
 .popup__submit-button:hover {
   background: rgba(52, 126, 255, 1);

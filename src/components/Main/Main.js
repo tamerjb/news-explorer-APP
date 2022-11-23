@@ -7,7 +7,7 @@ import SearchResults from '../SearchResults/SearchResults';
 export const Main = () => {
   return (
     <main className='main'>
-      <SearchResults />
+      {/* <SearchResults /> */}
 
       <About />
     </main>

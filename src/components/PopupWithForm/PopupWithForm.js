@@ -23,7 +23,12 @@ const PopupWithForm = (props) => {
         {props.children}
         <fieldset className='popup__fieldset'>
           <button
-            className={`popup__submit-button popup__submit-button_type_${props.name}`}
+            className={`popup__submit-button popup__submit-button_type_${
+              props.name
+            } ${
+              props.buttonDisabled === true ? 'popup__form-submit_disabled' : ''
+            }`}
+            disabled={props.buttonDisabled}
             type='submit'>
             {props.buttonText}
           </button>

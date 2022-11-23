@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import PopupContextProvider from './contexts/PopupsContext';
 import ArticlesContextProvider from './contexts/ArticlesContext';
 import IsHomeContextProvider from './contexts/IsHomeContext';
-import AuthContextProvider from './contexts/AuthContext';
+import AuthContextProvider from './contexts/CurrentUserContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

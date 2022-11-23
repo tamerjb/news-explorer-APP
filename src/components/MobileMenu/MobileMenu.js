@@ -4,7 +4,7 @@ import logo from '../../images/NewsExplorer_logo_white.svg';
 import logOutIcon from '../../images/logout_icon_white.svg';
 
 import { NavLink } from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '../../contexts/CurrentUserContext';
 import { usePopup } from '../../contexts/PopupsContext';
 
 const MobileMenu = () => {
@@ -88,7 +88,7 @@ const MobileMenu = () => {
             className='mobile-menu__button'
             onClick={handleAuthButtonClick}>
             <span className='mobile-menu__button-text'>
-              {loggedIn ? user.firstName : 'Sign in'}
+              {loggedIn ? user : 'Sign in'}
             </span>
             {loggedIn && (
               <img
