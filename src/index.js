@@ -7,7 +7,6 @@ import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import PopupContextProvider from './contexts/PopupsContext';
 import ArticlesContextProvider from './contexts/ArticlesContext';
-import IsHomeContextProvider from './contexts/IsHomeContext';
 import AuthContextProvider from './contexts/CurrentUserContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,13 +14,11 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthContextProvider>
-        <IsHomeContextProvider>
-          <PopupContextProvider>
-            <ArticlesContextProvider>
-              <App />
-            </ArticlesContextProvider>
-          </PopupContextProvider>
-        </IsHomeContextProvider>
+        <PopupContextProvider>
+          <ArticlesContextProvider>
+            <App />
+          </ArticlesContextProvider>
+        </PopupContextProvider>
       </AuthContextProvider>
     </BrowserRouter>
   </React.StrictMode>

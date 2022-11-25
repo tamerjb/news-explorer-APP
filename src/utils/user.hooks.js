@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import userApi from './MainApi';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { usePopup } from '../contexts/PopupsContext';
 
 export const useCurrentUser = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [User, setUser] = useState({});
   const [savedCards, setCards] = useState([]);
+  const popupContext = usePopup();
+
   const navigateTo = useNavigate();
 
   const handleLogout = () => {
@@ -72,21 +75,34 @@ export const useCurrentUser = () => {
   };
 
   const signinUser = async (values) => {
-    try {
-      const res = await userApi.signin(values);
-      if (res.token) {
-        localStorage.setItem('token', res.token);
-        // const user = await checkLocalToken(res.token);
-        const user = res.token;
-        setCurrentUser(user);
-        setLoggedIn(true);
-        return user;
-      } else {
-        return res;
-      }
-    } catch (err) {
-      console.log(err);
-    }
+    const res = await userApi.signin(values);
+    const user = res.user;
+    console.log('user', user);
+    setCurrentUser(user);
+    setLoggedIn(true);
+
+    // try {
+    //   const res = await userApi.signin(values);
+    //           const user = res.user;
+    //           console.log('user', user);
+    //           setCurrentUser(user);
+    //           setLoggedIn(true);
+    //   console.log('res', res);
+
+    //   if (res) {
+    //     // localStorage.setItem('token', res.token);
+    //     // const user = await checkLocalToken(res.token);
+    //     const user = res.user;
+    //     console.log('user', user);
+    //     setCurrentUser(user);
+    //     setLoggedIn(true);
+    //     return user;
+    //   } else {
+    //     return res;
+    //   }
+    // } catch (err) {
+    //   console.log(err);
+    // }
   };
 
   return {
