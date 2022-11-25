@@ -10,7 +10,7 @@ export default function ProtectedRoute({ isLoggedIn, children }) {
     if (!isLoggedIn) {
       openPopup();
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn, openPopup]);
 
   return isLoggedIn ? children : <Navigate to='/' />;
 }
