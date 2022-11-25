@@ -64,12 +64,12 @@ class UserActions {
 }
 
 const token = localStorage.getItem('token');
-const userApi = new UserActions({
-  url: 'http://localhost:3000',
+const userActionsApi = new UserActions({
+  url: 'https://api.aroundnews.students.nomoredomainssbs.ru',
   headers: {
     'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,
   },
 });
 
-export default userApi;
+export default userActionsApi;
