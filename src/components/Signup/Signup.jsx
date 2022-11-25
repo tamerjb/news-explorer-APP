@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { useStore } from '../../globalContext/GlobalContext';
 import { useFormWithValidation } from '../../utils/helpHooks';
 import userActionsApi from '../../utils/MainApi';
+import Tooltip from '../Tooltip/Tooltip';
 
 export default function Signup() {
-  const { openTooltip } = useStore().tooltip;
-  const { setRegisteredTrue } = useStore().userRegistration;
+  const { openTooltip, closeToolTip } = useStore().tooltip;
+  const { setRegisteredTrue, isRegistered } = useStore().userRegistration;
   const [dataExist, setDataExist] = useState({
     exist: false,
     message: '',
@@ -17,12 +18,12 @@ export default function Signup() {
     const res = await userActionsApi.signup(values);
     if (!res.message) {
       openTooltip();
-      return;
     }
     setDataExist({ exist: true, message: res.message });
     setTimeout(() => {
       setDataExist({ exist: false, message: '' });
     }, 2000);
+    closeToolTip();
   }
 
   return (

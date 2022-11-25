@@ -20,7 +20,13 @@ export default function SavedNewsCard({
         <p className='saved-news-card__date'>{date}</p>
         <h2 className='saved-news-card__title'>{title}</h2>
         <p className='saved-news-card__text'>{text}</p>
-        <p className='saved-news-card__source'>{source}</p>
+        <a
+          target='_blank'
+          className='saved-news-card__source'
+          href={currentCard.link}
+          rel='noreferrer'>
+          {source}
+        </a>
       </div>
       <span className='saved-news-card__trash'>
         <button

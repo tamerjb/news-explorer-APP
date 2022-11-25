@@ -35,6 +35,7 @@ export default function SearchForm() {
           placeholder='Enter topic'
           name='keyword'
           value={search || ''}
+          required
           onChange={handleChange}
         />
         <button className='search-form__search-button' type='submit'>

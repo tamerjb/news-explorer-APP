@@ -67,7 +67,6 @@
 }
 
 .news-card__source {
-  all: unset;
   font-family: 'Roboto Slab', sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -76,6 +75,8 @@
   letter-spacing: 0.4px;
   text-transform: uppercase;
   color: #b6bcbf;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .news-card__archive {

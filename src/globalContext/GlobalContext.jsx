@@ -17,6 +17,7 @@ export const GlobalProvider = ({ children }) => {
   const tooltip = useTooltip();
   const currentUser = useCurrentUser();
   const newsCards = useCards();
+
   const store = {
     popupWithForm,
     userRegistration,

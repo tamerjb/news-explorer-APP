@@ -9,6 +9,7 @@ export default function NewsCard({
   image,
   source,
   currentCard,
+  link,
 }) {
   const { keyword } = useStore().newsCards;
   const { isLoggedIn, savedCards, getSavedCards, saveArticle, deleteCardById } =
@@ -58,7 +59,13 @@ export default function NewsCard({
         <p className='news-card__date'>{realDate.toDateString()}</p>
         <h2 className='news-card__title'>{title}</h2>
         <p className='news-card__text'>{text}</p>
-        <p className='news-card__source'>{source}</p>
+        <a
+          target='_blank'
+          className='news-card__source'
+          href={currentCard.url}
+          rel='noreferrer'>
+          {source}
+        </a>
       </div>
       <span className='news-card__archive'>
         <button
