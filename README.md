@@ -1,15 +1,8 @@
 # News Explorer
 
-**Full stack web service for exploring news .**
+**Full stack APP for exploring news .**
 
 **[Live app](https://newsexplorer-tamir.students.nomoredomainssbs.ru)**
-
-## Back-End
-
-### ⚒ Technology stack ⚒
-
-- Development: Node, Express, and MongoDB.
-- Deployment: Google Cloud with Ubuntu 18.04 LTS VM.
 
 ### Routes & Features
 
@@ -20,11 +13,11 @@
 - `/articles` POST request for saving a new article to the current user.
 - `/articles/:id` DELETE request for deleting an article by id.
 
-### API
+### LINKS
 
 - ## [API](https://api.newsexplorer-tamir.students.nomoredomainssbs.ru)
 
-- ## [Repo](https://newsexplorer-tamir.students.nomoredomainssbs.ru)
+- ## [APP](https://newsexplorer-tamir.students.nomoredomainssbs.ru)
 
 ### ⚒ Technology stack ⚒
 
@@ -37,9 +30,9 @@
 - Responsive Layout
 - JWT server Auth
 - newsapi.org - articles
-- Deployed to **GCP** (Google Cloud Platform)
+- Deployed to **GCP** (Google Cloud Platform) Ubuntu 18.04 LTS VM
 
-| NPM Packages (Backend)               |                                                                                                                                                                                                       Aspects of Use |
+| Packges                              |                                                                                                                                                                                                       Aspects of Use |
 | :----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | bcryptjs                             |                                                                                                                                                                                                  Password Encryption |
 | body-parser                          |                                                                                                                              Returns middlewares that handle incoming requests before they reach a target controller |
