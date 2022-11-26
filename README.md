@@ -61,12 +61,12 @@
 
 - ### **Clone**
 
-#[Git Clone](https://github.com/tamerjb/news-explorer-frontend.git)
+[Git Clone](https://github.com/tamerjb/news-explorer-frontend.git)
 
 - ### **Install**
 
-$ cd news-explorer-frontend
-$ npm install
+cd news-explorer-frontend
+npm install
 
 - ### **Launch**
 
