@@ -59,7 +59,7 @@
 
 ### How to Get Started :
 
-### **Clone**
+- ### **Clone**
 
 #[Git Clone](https://github.com/tamerjb/news-explorer-frontend.git)
 
