@@ -4,7 +4,7 @@
 
 **[Live app](https://newsexplorer-tamir.students.nomoredomainssbs.ru)**
 
-### Routes & Features
+### Routes & Features :
 
 - `/signup` POST request for creating a user.
 - `/signin` POST request for receiving a Json-Web-Token.
@@ -13,7 +13,7 @@
 - `/articles` POST request for saving a new article to the current user.
 - `/articles/:id` DELETE request for deleting an article by id.
 
-### LINKS
+### LINKS :
 
 - ## [API](https://api.newsexplorer-tamir.students.nomoredomainssbs.ru)
 
@@ -21,7 +21,7 @@
 
 ### ⚒ Technology stack ⚒
 
-## Front-End
+## Front-End :
 
 - ReactJS
 - JavaScript
@@ -32,7 +32,7 @@
 - newsapi.org - articles
 - Deployed to **GCP** (Google Cloud Platform) Ubuntu 18.04 LTS VM
 
-## Back-End
+## Back-End :
 
 | Packges                              |                                                                                                                                                                                                       Aspects of Use |
 | :----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -50,24 +50,24 @@
 
 - NGINX - An open source software for web serving, reverse proxying, caching, load balancing, media streaming, and more.
 
-### Implementations
+### Implementations :
 
 - OOP.
 - Semantic HTML & BEM methodology.
 - Responsive user interface.
 - Global state management - Context API.
 
-### How to Get Started
+### How to Get Started :
 
-- ### **Clone**
+### **Clone**
 
 #[Git Clone](https://github.com/tamerjb/news-explorer-frontend.git)
 
 - ### **Install**
 
-- $ cd news-explorer-frontend
-- $ npm install
+$ cd news-explorer-frontend
+$ npm install
 
 - ### **Launch**
 
-$ npm run start
+npm run start
