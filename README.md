@@ -65,8 +65,8 @@
 
 - ### **Install**
 
-cd news-explorer-frontend
-npm install
+* cd news-explorer-frontend
+* npm install
 
 - ### **Launch**
 
