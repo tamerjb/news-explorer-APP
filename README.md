@@ -59,15 +59,15 @@
 
 ### How to Get Started
 
-### **Clone**
+- ### **Clone**
 
 #[Git Clone](https://github.com/tamerjb/news-explorer-frontend.git)
 
-### **Install**
+- ### **Install**
 
 - $ cd news-explorer-frontend
 - $ npm install
 
-### **Launch**
+- ### **Launch**
 
 $ npm run start
