@@ -1,7 +1,6 @@
 {
   "name": "news-explorer-frontend",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -16,7 +15,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+      "deploy": "react-scripts build && scp -r ./build/* tamerjb.98@34.82.120.1:/home/tamerjb.98/frontend"
+
   },
   "eslintConfig": {
     "extends": [
