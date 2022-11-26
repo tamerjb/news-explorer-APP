@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# News Explorer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Full stack web service for exploring news .**
 
-## Available Scripts
+**[Live app](https://newsexplorer-tamir.students.nomoredomainssbs.ru)**
 
-In the project directory, you can run:
+## Back-End
 
-### `npm start`
+### ⚒ Technology stack ⚒
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Development: Node, Express, and MongoDB.
+- Deployment: Google Cloud with Ubuntu 18.04 LTS VM.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Routes & Features
 
-### `npm test`
+- `/signup` POST request for creating a user.
+- `/signin` POST request for receiving a Json-Web-Token.
+- `/users/me` GET request for receiving the current user using Json-Web-Token.
+- `/articles` GET request for getting all the current user saved articles.
+- `/articles` POST request for saving a new article to the current user.
+- `/articles/:id` DELETE request for deleting an article by id.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### API
 
-### `npm run build`
+- ## [API](https://api.newsexplorer-tamir.students.nomoredomainssbs.ru)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ## [Repo](https://newsexplorer-tamir.students.nomoredomainssbs.ru)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### ⚒ Technology stack ⚒
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Front-End
 
-### `npm run eject`
+- ReactJS
+- JavaScript
+- CSS3
+- React Router Dom
+- Responsive Layout
+- JWT server Auth
+- newsapi.org - articles
+- Deployed to **GCP** (Google Cloud Platform)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| NPM Packages (Backend)               |                                                                                                                                                                                                       Aspects of Use |
+| :----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| bcryptjs                             |                                                                                                                                                                                                  Password Encryption |
+| body-parser                          |                                                                                                                              Returns middlewares that handle incoming requests before they reach a target controller |
+| celebrate                            |                                                                                                                                            It's an express middleware function that wraps the joi validation library |
+| cors (Cross-Origin Resource Sharing) | It is a mechanism to allow or restrict requested resources on a web server depend on where the HTTP request was initiated. This policy is used to secure a certain web server from access by other website or domain |
+| dotenv                               |                                                                                                                              automatically loads environment variables from a .env file into the process .env object |
+| express-winston                      |                                                                                                                                    Provides middlewares for request and error logging of your express.js application |
+| winston                              |                                                                                                                                                       Universal logging library with support for multiple transports |
+| validator                            |                                                                                                                                                                        A library of string validators and sanitizers |
+| jsonwebtoken                         |                                                                                                                                   An open standard for securely transferring data within parties using a JSON object |
+| express-rate-limit                   |                                                                                                                                Use to limit repeated requests to public APIs and/or endpoints such as password reset |
+| helmet                               |                                                                                                                                                   Helps you secure your Express apps by setting various HTTP headers |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- NGINX - An open source software for web serving, reverse proxying, caching, load balancing, media streaming, and more.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Implementations
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- OOP.
+- Semantic HTML & BEM methodology.
+- Responsive user interface.
+- Global state management - Context API.
