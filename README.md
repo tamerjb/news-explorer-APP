@@ -56,3 +56,18 @@
 - Semantic HTML & BEM methodology.
 - Responsive user interface.
 - Global state management - Context API.
+
+### How to Get Started
+
+### **Clone**
+
+#[Git Clone](https://github.com/tamerjb/news-explorer-frontend.git)
+
+### **Install**
+
+- $ cd news-explorer-frontend
+- $ npm install
+
+### **Launch**
+
+$ npm run start
