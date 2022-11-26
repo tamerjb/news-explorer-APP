@@ -65,7 +65,7 @@ class UserActions {
 
 const token = localStorage.getItem('token');
 const userActionsApi = new UserActions({
-  url: 'https://api.aroundnews.students.nomoredomainssbs.ru',
+  url: 'https://api.newsexplorer-tamir.students.nomoredomainssbs.ru',
   headers: {
     'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,
