@@ -2,7 +2,7 @@ import { useState } from 'react';
 import userApi from '../utils/MainApi';
 
 export const useCurrentUser = () => {
-  const [isLoggedIn, setLoggedIn] = useState(true);
+  const [isLoggedIn, setLoggedIn] = useState(false);
   const [currentUser, setUser] = useState({});
   const [savedCards, setCards] = useState([]);
 
