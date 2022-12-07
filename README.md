@@ -2,16 +2,8 @@
 
 **Full stack APP for exploring news .**
 
-**[Live app](https://newsexplorer-tamir.students.nomoredomainssbs.ru)**
 
-### Routes & Features :
 
-- `/signup` POST request for creating a user.
-- `/signin` POST request for receiving a Json-Web-Token.
-- `/users/me` GET request for receiving the current user using Json-Web-Token.
-- `/articles` GET request for getting all the current user saved articles.
-- `/articles` POST request for saving a new article to the current user.
-- `/articles/:id` DELETE request for deleting an article by id.
 
 ### LINKS :
 
@@ -49,6 +41,15 @@
 | helmet                               |                                                                                                                                                   Helps you secure your Express apps by setting various HTTP headers |
 
 - NGINX - An open source software for web serving, reverse proxying, caching, load balancing, media streaming, and more.
+
+### Routes & Features :
+
+- `/signup` POST request for creating a user.
+- `/signin` POST request for receiving a Json-Web-Token.
+- `/users/me` GET request for receiving the current user using Json-Web-Token.
+- `/articles` GET request for getting all the current user saved articles.
+- `/articles` POST request for saving a new article to the current user.
+- `/articles/:id` DELETE request for deleting an article by id.
 
 ### Implementations :
 
