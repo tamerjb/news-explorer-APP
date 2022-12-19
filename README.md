@@ -39,8 +39,8 @@
 | jsonwebtoken                         |                                                                                                                                   An open standard for securely transferring data within parties using a JSON object |
 | express-rate-limit                   |                                                                                                                                Use to limit repeated requests to public APIs and/or endpoints such as password reset |
 | helmet                               |                                                                                                                                                   Helps you secure your Express apps by setting various HTTP headers |
+| NGINX                               |                                                                                                                                                   An open source software for web serving, reverse proxying, caching, load balancing, media streaming, and more. |
 
-- NGINX - An open source software for web serving, reverse proxying, caching, load balancing, media streaming, and more.
 
 ### Routes & Features :
 
