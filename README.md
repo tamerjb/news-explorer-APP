@@ -26,6 +26,12 @@
 
 ## Back-End :
 
+- Node.JS
+- MongoDB
+- Celebrate/Joi
+- Jsonwebtoken
+- Express.js
+
 | **Packges**                              |                                                                                                                                                                                                        |
 | :----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | bcryptjs                             |                                                                                                                                                                                                  Password Encryption |
@@ -62,7 +68,7 @@
 
 - ### **Clone**
 
-[Git Clone](https://github.com/tamerjb/news-explorer-frontend.git)
+[Git Clone](https://github.com/tamerjb/news-explorer-APP.git)
 
 - ### **Install**
 
