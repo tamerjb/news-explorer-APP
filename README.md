@@ -26,7 +26,7 @@
 
 ## Back-End :
 
-| Packges                              |                                                                                                                                                                                                       Aspects of Use |
+| **Packges**                              |                                                                                                                                                                                                        |
 | :----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | bcryptjs                             |                                                                                                                                                                                                  Password Encryption |
 | body-parser                          |                                                                                                                              Returns middlewares that handle incoming requests before they reach a target controller |
