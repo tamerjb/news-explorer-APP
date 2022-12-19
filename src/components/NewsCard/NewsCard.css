@@ -77,8 +77,14 @@
   color: #b6bcbf;
   cursor: pointer;
   text-decoration: none;
-}
+    transition: .1s linear;
 
+}
+.news-card__source:hover{
+   transition: .3s linear;
+    transform: scale(1.1);
+    color: #2f71e5;
+}
 .news-card__archive {
   all: unset;
   width: 40px;
