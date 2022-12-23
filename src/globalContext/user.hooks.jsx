@@ -5,6 +5,15 @@ export const useCurrentUser = () => {
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [currentUser, setUser] = useState({});
   const [savedCards, setCards] = useState([]);
+  const [isSucess, setSucess] = useState(false);
+
+  const handlesetSucess = (x) => {
+    setSucess(x)
+
+  };
+
+
+
 
   const logoutCurrentUser = () => {
     setUser({});
@@ -43,7 +52,7 @@ export const useCurrentUser = () => {
   const getSavedCards = async () => {
     try {
       const cards = await userApi.getUserArticles();
-      if (!cards.message) {
+      if (cards) {
         setCards(cards);
         return;
       } else {
@@ -96,5 +105,6 @@ export const useCurrentUser = () => {
     saveArticle,
     deleteCardById,
     signinUser,
+    isSucess,handlesetSucess
   };
 };

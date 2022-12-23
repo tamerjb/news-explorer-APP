@@ -9,13 +9,14 @@ export default function Signin() {
   const { setRegisteredFalse } = useStore().userRegistration;
   const { closePopup } = useStore().popupWithForm;
   const { values, handleChange, errors, isValid } = useFormWithValidation();
+  const {handlesetSucess } = useStore().currentUser;
+
   const { openTooltip } = useStore().tooltip;
 
   async function handleSubmit(e) {
     e.preventDefault();
     try {
       const res = await signinUser(values);
-      console.log(res);
 
       if (res._id) {
         closePopup();
@@ -27,6 +28,8 @@ export default function Signin() {
       }
     } catch (err) {
       console.log(err);
+      handlesetSucess(false);
+      openTooltip();
     }
   }
 

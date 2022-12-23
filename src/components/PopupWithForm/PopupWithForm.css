@@ -130,12 +130,13 @@
 .popup__form-nav_action {
     cursor: pointer;
     color: #2f71e5;
+    font-size: 18px;
 }
 
 .popup__form-input_type_error {
     all: unset;
     font-family: "Inter", sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     position: absolute;
     bottom: -20px;
     color: #ff0000;
@@ -145,7 +146,8 @@
     font-family: "Inter", sans-serif;
     text-align: center;
     margin-bottom: 5px;
-    font-size: 12px;
+    font-size: 14px;
+    padding-bottom: 10px;
     color: #ff0000;
 }
 

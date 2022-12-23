@@ -2,28 +2,33 @@ import React, { useState } from 'react';
 import { useStore } from '../../globalContext/GlobalContext';
 import { useFormWithValidation } from '../../utils/helpHooks';
 import userActionsApi from '../../utils/MainApi';
-import Tooltip from '../Tooltip/Tooltip';
 
 export default function Signup() {
-  const { openTooltip, closeToolTip } = useStore().tooltip;
-  const { setRegisteredTrue, isRegistered } = useStore().userRegistration;
+  const { openTooltip, } = useStore().tooltip;
+  const { setRegisteredTrue } = useStore().userRegistration;
   const [dataExist, setDataExist] = useState({
     exist: false,
     message: '',
   });
-  const { values, handleChange, errors, isValid } = useFormWithValidation();
+  const { handlesetSucess } = useStore().currentUser;
 
-  async function handleSubmit(e) {
+  const { values, handleChange, errors, isValid } = useFormWithValidation();
+ 
+
+    async function handleSubmit(e) {
     e.preventDefault();
+    try{
     const res = await userActionsApi.signup(values);
-    if (!res.message) {
-      openTooltip();
+    if (res) {       
+      handlesetSucess(true)
+      openTooltip()
     }
-    setDataExist({ exist: true, message: res.message });
-    setTimeout(() => {
-      setDataExist({ exist: false, message: '' });
-    }, 2000);
-    closeToolTip();
+
+}
+  catch{
+  handlesetSucess(false)
+  openTooltip();
+}
   }
 
   return (
@@ -85,9 +90,9 @@ export default function Signup() {
           Sign up
         </button>
         <p className='popup__form-nav'>
-          or{' '}
+          Have an account?{' '}
           <span className='popup__form-nav_action' onClick={setRegisteredTrue}>
-            Sign in
+            Login
           </span>
         </p>
       </form>
