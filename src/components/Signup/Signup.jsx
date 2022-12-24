@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useStore } from '../../globalContext/GlobalContext';
 import { useFormWithValidation } from '../../utils/helpHooks';
-import userActionsApi from '../../utils/MainApi';
+import userActionsApi from '../../utils/userActionApi';
 
 export default function Signup() {
   const { openTooltip, } = useStore().tooltip;

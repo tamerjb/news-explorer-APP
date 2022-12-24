@@ -10,7 +10,7 @@ export default function SavedNews() {
 
   useEffect(() => {
     getSavedCards();
-  }, []);
+  }, [getSavedCards]);
 
   useEffect(() => {
     const newArr = savedCards.map((card) => card.keyword);

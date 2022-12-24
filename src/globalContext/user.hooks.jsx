@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import userApi from '../utils/MainApi';
+import userApi from '../utils/userActionApi';
 
 export const useCurrentUser = () => {
   const [isLoggedIn, setLoggedIn] = useState(false);
