@@ -13,10 +13,12 @@ import { useEffect } from 'react';
 
 export default function App() {
   const popupToShow = useCurrentPopup();
-  const { isLoggedIn, checkLocalToken } = useStore().currentUser;
+  const { isLoggedIn, checkLocalToken,getSavedCards } = useStore().currentUser;
 
   useEffect(() => {
     checkLocalToken();
+    getSavedCards();
+
   }, []);
 
   return (

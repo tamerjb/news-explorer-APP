@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './SavedNews.css';
 import SavedNewsCard from '../SavedNewsCard/SavedNewsCard';
 import { useStore } from '../../globalContext/GlobalContext';
-import { useEffect } from 'react';
 
 export default function SavedNews() {
   const { currentUser, savedCards, getSavedCards } = useStore().currentUser;
   const [keywords, setKeywords] = useState([]);
 
-  useEffect(() => {
-    getSavedCards();
-  }, [getSavedCards]);
+  // useEffect(() => {
+  //   getSavedCards();
+  // }, []);
 
   useEffect(() => {
     const newArr = savedCards.map((card) => card.keyword);
     setKeywords([...new Set(newArr)]);
-  }, [savedCards]);
+  }, []);
 
   return (
     <>

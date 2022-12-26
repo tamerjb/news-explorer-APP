@@ -2,7 +2,7 @@ import { useState } from 'react';
 import userApi from '../utils/userActionApi';
 
 export const useCurrentUser = () => {
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isLoggedIn, setLoggedIn] = useState(true);
   const [currentUser, setUser] = useState({});
   const [savedCards, setCards] = useState([]);
   const [isSucess, setSucess] = useState(false);
@@ -18,8 +18,8 @@ export const useCurrentUser = () => {
   const logoutCurrentUser = () => {
     setUser({});
     setLoggedIn(false);
-    localStorage.removeItem('token');
-    setCards([]);
+    localStorage.clear();
+        setCards([]);
   };
   const setCurrentUser = (values) => {
     setUser({ ...values });
@@ -28,8 +28,10 @@ export const useCurrentUser = () => {
   const checkLocalToken = async () => {
     try {
       const token = localStorage.getItem('token');
+      console.log('token',token)
       if (token) {
         const user = await userApi.checkToken(token);
+        console.log('user',user)
         setUser(user);
         return user;
       } else {
@@ -80,6 +82,7 @@ export const useCurrentUser = () => {
   const signinUser = async (values) => {
     try {
       const res = await userApi.signin(values);
+      console.log('res',res)
       if (res.token) {
         localStorage.setItem('token', res.token);
         const user = await checkLocalToken(res.token);
