@@ -1,7 +1,9 @@
 class UserActions {
-  constructor({ url, headers }) {
+  constructor({ url, headers ,token}) {
     this.url = url;
     this.headers = headers;
+    this.token = localStorage.getItem("token");
+
   }
 
   async _connect(url, headers) {
@@ -13,20 +15,22 @@ class UserActions {
     }
   }
 
-  signup(values) {
+  signup(values,token) {
     return this._connect(`${this.url}/signup`, {
-      method: 'POST',
-      headers: this.headers,
+      method: "POST",
+      headers: this.headers,Authorization: `Bearer ${token}`,
       body: JSON.stringify(values),
     });
   }
 
-  signin(values) {
+  signin(values,token) {
     return this._connect(`${this.url}/signin`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
+        Accept: "application/json",
+        "Content-Type": "application/json",
+         Authorization: `Bearer ${token}`,
+
       },
       body: JSON.stringify(values),
     });
@@ -35,40 +39,42 @@ class UserActions {
   checkToken(token) {
     return this._connect(`${this.url}/users/me`, {
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
     });
   }
 
-  saveArticle(article) {
+  saveArticle(article, token) {
     return this._connect(`${this.url}/articles`, {
-      method: 'POST',
+      method: "POST",
       headers: this.headers,
+      Authorization: `Bearer ${token}`,
       body: JSON.stringify(article),
     });
   }
 
-  getUserArticles() {
+  getUserArticles(token) {
     return this._connect(`${this.url}/articles`, {
-      headers: this.headers,
+      headers:this.headers,Authorization: `Bearer ${token}`
+    
     });
   }
 
-  deleteArticleById(id) {
+  deleteArticleById(id, token) {
     return this._connect(`${this.url}/articles/${id}`, {
-      method: 'DELETE',
+      method: "DELETE",
+      Authorization: `Bearer ${token}`,
       headers: this.headers,
     });
   }
 }
 
-const token = localStorage.getItem('token');
 const userActionsApi = new UserActions({
-  url: 'https://api.newsexplorer-tamir.students.nomoredomainssbs.ru',
+  url: "https://api.newsexplorer-tamir.students.nomoredomainssbs.ru",
   headers: {
-    'Content-Type': 'application/json',
-    Authorization: `Bearer ${token}`,
+    "Content-Type": "application/json",
+    // Authorization: `Bearer ${token}`,
   },
 });
 
