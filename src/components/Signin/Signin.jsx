@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { useStore } from '../../globalContext/GlobalContext';
 import { useFormWithValidation } from '../../utils/helpHooks';
@@ -9,7 +9,7 @@ export default function Signin() {
   const { setRegisteredFalse } = useStore().userRegistration;
   const { closePopup } = useStore().popupWithForm;
   const { values, handleChange, errors, isValid } = useFormWithValidation();
-  const {handlesetSucess } = useStore().currentUser;
+  const {handlesetSucess,getSavedCards } = useStore().currentUser;
 
   const { openTooltip } = useStore().tooltip;
  
@@ -20,6 +20,7 @@ export default function Signin() {
 
       if (res._id) {
         closePopup();
+        getSavedCards();
       } else {
         setError(res.message);
         setTimeout(() => {

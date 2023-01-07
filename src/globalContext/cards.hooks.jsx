@@ -18,13 +18,13 @@ export const useCards = () => {
   };
   const _removeIsLoading = () => setIsLoading(false);
 
-  const getCardsByKeyWord = async (keyWord) => {
+  const getCardsByKeyWord = async (keyword) => {
     _setIsLoading();
     try {
-      const res = await newsApi.getArticles(keyWord);
+      const res = await newsApi.getArticles(keyword);
       if (res.articles) {
         setCards(res.articles);
-        setKeyword(keyWord);
+        setKeyword(keyword);
       } else {
         _setNotFound();
       }

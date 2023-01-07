@@ -4,12 +4,9 @@ import SavedNewsCard from '../SavedNewsCard/SavedNewsCard';
 import { useStore } from '../../globalContext/GlobalContext';
 
 export default function SavedNews() {
-  const { currentUser, savedCards, getSavedCards } = useStore().currentUser;
+  const { currentUser, savedCards } = useStore().currentUser;
   const [keywords, setKeywords] = useState([]);
 
-  // useEffect(() => {
-  //   getSavedCards();
-  // }, []);
 
   useEffect(() => {
     const newArr = savedCards.map((card) => card.keyword);
