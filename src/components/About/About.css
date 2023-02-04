@@ -9,11 +9,20 @@
   flex-direction: column;
   row-gap: 24px;
   max-width: 600px;
+justify-content: flex-start;  
+}
+.about__main__paragraph{
+
 }
 .about__image {
-  border-radius: 50%;
-  max-width: 500px;
-  max-height: 500px;
+  border-radius: 3%;
+  width: 100%;
+  max-width: 450px;
+  max-height: 450px;
+  -webkit-border-radius: 3%;
+  -moz-border-radius: 3%;
+  -ms-border-radius: 3%;
+  -o-border-radius: 3%;
 }
 
 .about__title {
@@ -38,6 +47,12 @@
 .about__link__linkedin {
   text-decoration: none;
   color: #0072b1;
+  font-weight: 800;
+  font-size: 22px;
+}
+.about__link__portofolio {
+  text-decoration: none;
+  color: #00a3fa;
   font-weight: 800;
   font-size: 22px;
 }

@@ -1,8 +1,9 @@
 .top {
     background-image: url(../../images/main-image.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
     padding-bottom: 80px;
+
 }
 
 .top_white {

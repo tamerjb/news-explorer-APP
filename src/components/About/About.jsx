@@ -7,7 +7,10 @@ export default function About() {
     <section className="about">
       <img className="about__image" src={about} alt="author" />
       <div className="about__main">
-        <h2 className="about__title">About the author</h2>
+      <h2 className="about__title">About the author</h2>
+
+        <div className='about__main__paragraph'>
+
         <p className="about__info">
           Hi, My name is Tamer Gabarin, im happy to share my final project for
           my Fullstack web development Bootcamp. I'm excited to show you how i
@@ -32,7 +35,22 @@ export default function About() {
           </a>{" "}
           . Thank you!
         </p>
+        <div className="about__main__paragraph">
+      <p> → {" "}
+      <a
+            href="https://portofolio-virid-two.vercel.app/"
+            target="_blank"
+            className="about__link__portofolio"
+            rel="noreferrer"
+          >
+             Porotofilo
+          </a></p>
       </div>
+        </div>
+
+      </div>
+
+
     </section>
   );
 }
