@@ -15,14 +15,14 @@ justify-content: flex-start;
 
 }
 .about__image {
-  border-radius: 3%;
+  border-radius: 1%;
   width: 100%;
   max-width: 450px;
   max-height: 450px;
-  -webkit-border-radius: 3%;
-  -moz-border-radius: 3%;
-  -ms-border-radius: 3%;
-  -o-border-radius: 3%;
+  -webkit-border-radius: 1%;
+  -moz-border-radius: 1%;
+  -ms-border-radius: 1%;
+  -o-border-radius: 1%;
 }
 
 .about__title {
