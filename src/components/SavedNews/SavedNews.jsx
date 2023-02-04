@@ -11,6 +11,7 @@ export default function SavedNews() {
   useEffect(() => {
     const newArr = savedCards.map((card) => card.keyword);
     setKeywords([...new Set(newArr)]);
+
   }, []);
 
   return (

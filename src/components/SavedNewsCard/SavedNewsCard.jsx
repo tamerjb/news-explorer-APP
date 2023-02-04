@@ -12,6 +12,7 @@ export default function SavedNewsCard({
   currentCard,
 }) {
   const { deleteCardById } = useStore().currentUser;
+  
 
   return (
     <article className='saved-news-card'>
